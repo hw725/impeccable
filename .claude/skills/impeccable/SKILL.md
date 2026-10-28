@@ -1,11 +1,20 @@
 ---
 name: impeccable
 description: "Use when the user wants to design, redesign, shape, critique, audit, polish, simplify, harden, animate, or otherwise improve a frontend interface: websites, landing pages, dashboards, product UI, components, forms, settings, onboarding, empty states, and native iOS or Android screens. Handles UX review, hierarchy, layout, typography, color, motion, UX copy, accessibility, responsive behavior, edge cases, and capturing or documenting design systems (DESIGN.md, tokens). Also for making bland UI bolder, loud UI quieter, or ambitious visual effects. Not for backend-only or non-UI tasks."
-version: 4.8.0
+version: 4.7.0
 user-invocable: true
 argument-hint: "[shape · audit|critique · animate|bolder|colorize|delight|layout|overdrive|quieter|typeset · adapt|clarify|distill · harden|onboard|optimize|polish · init|document|extract|live|generate] [target]"
 license: Apache 2.0
+metadata:
+  author: pbakaus/impeccable
+  version: "4.7.0+local.1"
+  category: design
+  upstream: https://github.com/pbakaus/impeccable
 ---
+
+> **로컬 분기 (claude-skills, 2026-10-16 재도입)** — 상류 `.claude/skills/impeccable/` 배포본을 그대로 들이고 이 절과 frontmatter `metadata`만 더했다(계약 `.upstream.json`).
+> **글꼴은 사용자 전역 정책이 이 스킬의 모든 글꼴 지시보다 우선한다**(`~/.claude/CLAUDE.md` 《글꼴 정책》): 세리프 = Noto Serif CJK KR(웹은 Google Fonts 《Noto Serif KR》) 또는 나눔명조 · 그 외 기본 = Pretendard GOV Variable · 고정폭 = Sarasa Fixed K · 다국어 = Spoqa Han Sans Neo. Google Fonts에 없는 글꼴은 **서브셋하지 않고** 전체 글리프 woff2로 싣는다. `typeset`·`bolder`·`new-work`·`craft-floor` 등 reference가 《독특한 글꼴로 바꿔라》·《서브셋하라》·《흔한 글꼴 금지》를 말해도 이 정책을 따른다. 프로젝트에 고정된 글꼴(brief)이 있으면 그것이 먼저다.
+> 엔진 런처(`scripts/impeccable(.cmd)`)는 처음 실행할 때 GitHub 릴리스에서 버전 고정 엔진을 내려받아 `.sha256` 대조 후 실행한다 — 사용자가 이 스킬을 호출해 명령을 실행할 때만 돈다.
 
 This skill gives you the tools and permission to make design that earns the name out-of-distribution craft. Work as an award-winning design director would: production-grade code, a clear POV, a deep grasp of what the client and its users need, and exceptional craft.
 
@@ -20,7 +29,7 @@ Core principles:
 2. Load the request's playbook: its Commands-table reference for an explicit/implied sub-command, or [reference/new-work.md](reference/new-work.md) for a new surface or replacement visual world. Inspect target and incumbent visual truth before editing. When the app cannot run, start with committed visual-regression goldens or screenshot fixtures; verify target and freshness against current tokens, CSS, components, or assets, resolve conflicts, and compare theme/variant captures.
 3. After resolving analysis and direction, read [reference/craft-floor.md](reference/craft-floor.md) immediately before any UI edit, including small refinements. It carries the quality floor, the absolute bans, and the reflexes no detector catches. Do not load it for planning-only work.
 
-**Launcher unavailable:** On refusal or failure, send a separate message **before the next tool call**: “Context loading did not run; I’ll read the existing project context directly.” Then read existing PRODUCT.md and DESIGN.md without inventing missing context, follow applicable steps 2–3, including reading [reference/craft-floor.md](reference/craft-floor.md) immediately before any UI edit, and continue through permitted tools. This applies to planning and editing; launcher failure alone does not block either.
+**Launcher unavailable:** On refusal or failure, send a separate message **before the next tool call**: “Context loading did not run; I’ll read the existing project context directly.” Then read existing PRODUCT.md and DESIGN.md without inventing missing context, follow applicable steps 2–3, and continue through permitted tools. This applies to planning and editing; launcher failure alone does not block either.
 
 ## How to design
 
